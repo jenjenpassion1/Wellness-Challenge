@@ -240,7 +240,7 @@ document.getElementById('wellnessForm').addEventListener('submit', function(e){
   const subject = encodeURIComponent('$1 Wellness Challenge - ' + f.get('first_name') + ' ' + f.get('last_name'));
   const body = encodeURIComponent(lines.join('\n'));
   document.getElementById('success').style.display='block';
-  window.location.href = 'mailto:jenn4outreach@gmail.com?subject=' + subject + '&body=' + body;
+  fetch("https://formsubmit.co/ajax/jenn4outreach@gmail.com", {method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({_subject:decodeURIComponent(subject),message:decodeURIComponent(body)})});fetch("https://formsubmit.co/ajax/jenn4outreach@gmail.com", {method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({_subject:decodeURIComponent(subject),message:decodeURIComponent(body)})});
 });
 </script>
 </body>
